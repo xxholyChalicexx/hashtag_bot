@@ -19,9 +19,10 @@ class InstagramBot:
         images = bot.find_elements_by_class_name('v1Nh3')
         time.sleep(3)
         sum = 0
-        for i in range(0,2):
+        for i in range(0,9):
             images[i].click()
             time.sleep(3)
+            # this try tag is used because sometime it seems like the top 9 post, if video is included, it seems to not able to recognize some element
             try:
                 likes = bot.find_element_by_class_name('_8A5w5').text
             except:
@@ -31,7 +32,7 @@ class InstagramBot:
             close = bot.find_element_by_class_name('ckWGn')
             close.click()
 
-        avg = sum/2
+        avg = sum/9
         print(avg)  
         # images[0].click()
         # time.sleep(3)
